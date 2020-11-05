@@ -1,0 +1,39 @@
+<div class="background">
+    <div>
+        <table id="board" mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+            <ng-container matColumnDef="advertisement">
+                <th mat-header-cell *matHeaderCellDef> Job Offer </th>
+                <td mat-cell *matCellDef="let element"> {{element.advertisement}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="ID">
+                <th mat-header-cell *matHeaderCellDef> Short Description </th>
+                <td mat-cell *matCellDef="let element"> {{element.short_desc}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="button">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element">
+                    <button mat-raised-button color="primary" mat-button (click)="set_ad(element.advertisement, element.ID, element.description, element.short_desc, element.money); drawer.toggle()">Learn More</button>
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[10, 20]" showFirstLastButtons></mat-paginator>
+    </div>
+    <mat-spinner></mat-spinner>
+
+    <div style="height: 100%;">
+        <mat-drawer-container class="example-container">
+            <mat-drawer #drawer class="example-sidenav" mode="side" position="end">
+                <p class="dialog_ad_title">{{allezwoulah.advertisement}}</p>
+                <div class="dialog_container">
+                    <p class="dialog_title">Description : <a class="dialog_content">{{allezwoulah.description}}</a></p>
+                    <p class="dialog_title">Salary : <a class="dialog_content">{{allezwoulah.money}}€ per year</a></p>
+                </div>
+                <button mat-raised-button color="accent" class="apply_button" (click)="openDialog()">Apply</button>
+            </mat-drawer>
+        </mat-drawer-container>
+    </div>
+</div>

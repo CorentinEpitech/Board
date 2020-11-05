@@ -1,0 +1,46 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.3
+-- https://www.phpmyadmin.net/
+--
+-- Hôte : localhost:3308
+-- Généré le :  ven. 09 oct. 2020 à 14:02
+-- Version du serveur :  5.7.26
+-- Version de PHP :  7.4.2
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Base de données :  `job_advertisements`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `advertisements`
+--
+
+CREATE TABLE `advertisements` (
+  `advertisement` varchar(255) NOT NULL,
+  `ID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `advertisements`
+--
+ALTER TABLE `advertisements`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `advertisements`
+--
+ALTER TABLE `advertisements`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
